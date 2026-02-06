@@ -5,10 +5,14 @@ pipeline {
         nodejs "node20"  // Make sure NodeJS tool is configured in Jenkins global tools
     }
 
+    options {
+        cleanWs()
+    }
+
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Manmeet2607/node-hello.git'
+                checkout scm
             }
         }
 
