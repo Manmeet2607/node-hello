@@ -2,17 +2,16 @@ pipeline {
     agent any
 
     tools {
-        nodejs "node20"  // Configure NodeJS in Jenkins global tools
+        nodejs "node20"  // Make sure NodeJS tool is configured in Jenkins global tools
     }
-
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/Manmeet2607/node-hello.git'
+                git branch: 'main', url: 'https://github.com/Manmeet2607/node-hello.git'
             }
         }
-        
+
         stage('Install Dependencies') {
             steps {
                 sh "apt-get update && apt-get install -y libatomic1"
