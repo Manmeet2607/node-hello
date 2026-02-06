@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
-                sh "sudo apt-get update && sudo apt-get install -y libatomic1"
+                sh "apt-get update && apt-get install -y libatomic1"
                 sh "npm install"
             }
         }
