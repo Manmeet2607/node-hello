@@ -7,6 +7,12 @@ pipeline {
 
 
     stages {
+        stage('checkout'){
+            steps{
+                git "https://github.com/Manmeet2607/node-hello.git"
+            }
+        }
+        
         stage('Install Dependencies') {
             steps {
                 sh "apt-get update && apt-get install -y libatomic1"
