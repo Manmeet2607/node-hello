@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs "node20"  // Configure NodeJS in Jenkins global tools
+    }
+
+
     stages {
         stage('Install Dependencies') {
             steps {
