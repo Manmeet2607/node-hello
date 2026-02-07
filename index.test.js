@@ -1,4 +1,5 @@
-function greet(name) {
-  return `Hello, ${name}!`;
-}
-module.exports = { greet };
+const { greet } = require('./index');
+
+test('greets a user by name', () => {
+  expect(greet('Jaisika')).toBe('Hello, Jaisika!');
+});
