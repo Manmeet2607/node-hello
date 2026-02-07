@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/johnpapa/node-hello/issues"
   },
+  "jest": {
+  "reporters": [
+    "default",
+    [ "jest-junit", { "outputDirectory": "./reports", "outputName": "junit.xml" } ]
+  ]
+},
   "homepage": "https://github.com/johnpapa/node-hello#readme"
 }
