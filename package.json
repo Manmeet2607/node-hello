@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,9 +16,6 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/johnpapa/node-hello/issues"
-  },
-  "scripts": {
-  "test": "jest"
   },
   "jest": {
   "reporters": [
