@@ -11,6 +11,7 @@ pipeline {
                 sh 'npm install'
                 sh 'npm install --save-dev jest'
                 sh 'npm install --save-dev jest-junit'
+                sh 'npm install --save-dev @babel/core @babel/cli @babel/preset-env'
             }
         }
         stage('Run Tests') {
