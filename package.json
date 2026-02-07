@@ -16,6 +16,9 @@
   "bugs": {
     "url": "https://github.com/johnpapa/node-hello/issues"
   },
+  "scripts": {
+  "test": "jest"
+  },
   "jest": {
   "reporters": [
     "default",
