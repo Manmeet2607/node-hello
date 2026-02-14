@@ -2,7 +2,7 @@ pipeline {
     agent any
     parameters{
         string(name:"APP_ENV", defaultValue : "dev",description: "this is the ennv where to run");
-        booleanParam(name: "RUN_TESTS", defaultValue:true,description: "whetehr to run tests");
+        booleanParam(name: "RUN_TESTS", defaultValue: true,description: "whetehr to run tests");
     }
 
     environment{
