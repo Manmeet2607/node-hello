@@ -2,7 +2,7 @@ pipeline {
     agent any
     parameters{
         string(name:"APP_ENV", defaultValue : "dev",description: "this is the ennv where to run");
-        booleanParam(name: "RUN_TESTS", defaultValue:"yes",description: "whetehr to run tests");
+        booleanParam(name: "RUN_TESTS", defaultValue:true,description: "whetehr to run tests");
     }
 
     environment{
@@ -31,7 +31,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "params is  : ${params.APP_ENV}"
-                echo "env is : ${secret}"
+                echo "env is : ${env.secret}"
                 sh 'npm run build'
             }
         }
