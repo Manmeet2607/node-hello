@@ -12,20 +12,26 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                echo "doing checkout"
                 checkout scm
+                echo "checkout done"
             }
         }
         stage('Install Dependencies') {
             steps {
+                echo "install entered"
                 sh 'npm install'
                 sh 'npm install --save-dev jest'
                 sh 'npm install --save-dev jest-junit'
                 sh 'npm install --save-dev @babel/core @babel/cli @babel/preset-env'
+                echo "install finished"
             }
         }
         stage('Run Tests') {
             steps {
+                echo "run test"
                 sh 'npm test'
+                echo "test completed"
             }
         }
         stage('Build') {
