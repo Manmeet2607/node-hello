@@ -1,5 +1,14 @@
 pipeline {
     agent any
+    parameters{
+        string(name:"APP_ENV", defaultValue : "dev",description: "this is the ennv where to run");
+        booleanParam(name: "RUN_TESTS", defaultValue:"yes",description: "whetehr to run tests");
+    }
+
+    environment{
+        NODE_ENV = "${params.APP_ENV}"
+        secret = credentials('my_secret');
+    }
     stages {
         stage('Checkout') {
             steps {
@@ -21,6 +30,8 @@ pipeline {
         }
         stage('Build') {
             steps {
+                echo "params is  : ${params.APP_ENV}"
+                echo "env is : ${secret}"
                 sh 'npm run build'
             }
         }
